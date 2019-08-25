@@ -16,19 +16,28 @@ public class Cidade implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	private String cidade;
-	
+	private String nome;
+		
+	/* DESATIVADO POIS FICOU DANDO ERRO DE REDUNDANCIA CICLICA
+	@JsonManagedReference
+	*/
 	@ManyToOne
 	@JoinColumn(name="estado_id")
 	private Estado estado;
 	
 	public Cidade() {		
 	}
-
-	public Cidade(Integer id, String cidade, Estado estado) {
+	
+	public Cidade(Integer id, String nome) {
 		super();
 		this.id = id;
-		this.cidade = cidade;
+		this.nome = nome;		
+	}
+
+	public Cidade(Integer id, String nome, Estado estado) {
+		super();
+		this.id = id;
+		this.nome = nome;
 		this.estado = estado;
 	}
 
@@ -40,12 +49,12 @@ public class Cidade implements Serializable{
 		this.id = id;
 	}
 
-	public String getCidade() {
-		return cidade;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+	public void seNome(String nome) {
+		this.nome = nome;
 	}
 
 	public Estado getEstado() {

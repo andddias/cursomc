@@ -1,14 +1,11 @@
 package com.andredias.cursomc.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Estado implements Serializable{
@@ -17,18 +14,21 @@ public class Estado implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
-	private String estado;
-	
+	private String nome;
+		
+	/* DESATIVADO POIS FICOU DANDO ERRO DE REDUNDANCIA CICLICA
+	@JsonBackReference
 	@OneToMany(mappedBy="estado")
 	private List<Cidade> cidades = new ArrayList<>();
+	*/
 	
 	public Estado() {		
 	}
 
-	public Estado(Integer id, String estado) {
+	public Estado(Integer id, String nome) {
 		super();
 		this.id = id;
-		this.estado = estado;
+		this.nome = nome;
 	}
 		
 	public Integer getId() {
@@ -39,14 +39,15 @@ public class Estado implements Serializable{
 		this.id = id;
 	}
 
-	public String getEstado() {
-		return estado;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setEstado(String nome) {
+		this.nome = nome;
 	}
-
+	
+	/* DESATIVADO POIS FICOU DANDO ERRO DE REDUNDANCIA CICLICA
 	public List<Cidade> getCidade() {
 		return cidades;
 	}
@@ -54,6 +55,7 @@ public class Estado implements Serializable{
 	public void setCidade(List<Cidade> cidades) {
 		this.cidades = cidades;
 	}
+	*/
 
 	@Override
 	public int hashCode() {

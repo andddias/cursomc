@@ -57,11 +57,11 @@ public class CursomcApplication implements CommandLineRunner{
 		Cidade c1 = new Cidade(null, "Uberlândia", est1);
 		Cidade c2 = new Cidade(null,"São Paulo", est2);
 		Cidade c3 = new Cidade(null, "Campinas", est2);
-		
+	
 		Cliente cli1 = new Cliente(null, "Maria Silva", "maria@gmail.com", "36378912377", TipoCliente.PESSOAFISICA);
 		
-		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 203", "Jardim", 38220834, cli1, c1);
-		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", 38777012, cli1, c2);
+		Endereco e1 = new Endereco(null, "Rua Flores", "300", "Apto 203", "Jardim", "38220834", cli1, c1);
+		Endereco e2 = new Endereco(null, "Avenida Matos", "105", "Sala 800", "Centro", "38777012", cli1, c2);
 		
 		
 		cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
@@ -71,8 +71,10 @@ public class CursomcApplication implements CommandLineRunner{
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
+		/* DESATIVADO POIS FICOU DANDO ERRO DE REDUNDANCIA CICLICA
 		est1.getCidade().addAll(Arrays.asList(c1));
 		est2.getCidade().addAll(Arrays.asList(c2, c3));
+		*/
 		
 		cli1.getTelefones().addAll(Arrays.asList(27363323, 93838393));
 		cli1.getEnderecos().addAll(Arrays.asList(e1,e2));
