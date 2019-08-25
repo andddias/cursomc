@@ -89,10 +89,8 @@ public class CursomcApplication implements CommandLineRunner{
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 		
-		/* DESATIVADO POIS FICOU DANDO ERRO DE REDUNDANCIA CICLICA
 		est1.getCidade().addAll(Arrays.asList(c1));
 		est2.getCidade().addAll(Arrays.asList(c2, c3));
-		*/
 		
 		cli1.getTelefones().addAll(Arrays.asList(27363323, 93838393));
 		cli1.getEnderecos().addAll(Arrays.asList(e1, e2));

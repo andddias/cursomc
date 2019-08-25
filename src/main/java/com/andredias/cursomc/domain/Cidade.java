@@ -18,9 +18,6 @@ public class Cidade implements Serializable{
 	private Integer id;
 	private String nome;
 		
-	/* DESATIVADO POIS FICOU DANDO ERRO DE REDUNDANCIA CICLICA
-	@JsonManagedReference
-	*/
 	@ManyToOne
 	@JoinColumn(name="estado_id")
 	private Estado estado;
